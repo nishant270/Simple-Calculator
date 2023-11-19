@@ -1,45 +1,55 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <unistd.h>
 
-int mode(char x[100], int a)
+int try(char x, int a)
 {
 
-    if (x == "Addition")
-    {
-        int s, d, r;
-        if (a == 2)
-        {
-            printf("Enter the two numbers:\n");
-            scanf("%d\n%d", &s, &d);
-            printf("The sum of two numbers is %d", s + d);
-        }
-        else
-        {
-            printf("The total number you want to compare are:\n");
-            scanf("%d", &r);
-            // I COULDN'T THINK ABOUT HOW TO INCULCATE BODMAS IN MY CODE.
-        }
-    }
-}
-
-// HELLO
+    return 0;
+}    
 
 int main()
 {
-    char input1[100];
-    printf("Enter which calculator function you want to use?\nAddition\nSubtraction\nMultiplication\nDivision\nModulus\n");
-    scanf("%s", &input1);
-    for (int i = 0; input1[i]; i++)
+    // abc:
+    int a,c;char b,t;
+    printf("This calculator is only for 2 numbers and one operator\n");
+    sleep(2);
+    printf("Give the equation you want to calculate:\n");
+    scanf("%d%c%d", &a, &b, &c);
+    printf("The result is .........\n");
+    sleep(2);
+    switch (b)
     {
-        input1[i] = tolower(input1[i]);
+    case '+':
+        printf("%d", a+c);
+        break;
+
+    case '-':
+        printf("%d", a-c);
+        break;
+
+    case '*':
+        printf("%d", a*c);
+        break;
+
+    case '/':
+        printf("%d", a/c);
+        break;
+
+    default:
+        printf("Oops!, The arithmetic operator you want to use isn't availabe right now");
+        break;
     }
 
-    int a;
+    // printf("Do you want to again use the calculator\nY for Yes\n N for No\n");
+    // scanf("%c", &t);
+    // int tolower(int t);
+    // if (t=='y')
+    // {
+    //     goto abc;
+    // }
 
-    printf("Enter the number of numbers you want to use in this \n");
-    scanf("%d", &a);
-
-    mode(input1, a);
+    
 
     return 0;
 }
